@@ -1,0 +1,36 @@
+
+* BibTeX Journal Abbreviations
+
+Some journals can be a real pain in the ass.
+
+Example: Journals disagree about the proper formatting for the name of
+a journal name in a reference.  Some want the "long" format:
+/Proceedings of the Natural Academy of Sciences of the United States
+of America/.  Others want the "short" format:
+/Proc. Natl. Acad. Sci. U. S. A./.  Others want other things, I don't
+know, don't ask me.
+
+For these kinds of reasons its nice to maintain a single BibTeX file
+with [[http://artis.imag.fr/~Xavier.Decoret/resources/xdkbibtex/bibtex_summary.html#stringdef][string variables]] for journals.  These labels can be turned into
+either short or long journal names automatically by BibTeX.
+
+I've collected here some "standard abbreviations" for journal names I
+found on the Internet as well as my own list of abbreviations.  They
+appear in two files, =journal-abbreviations-long.bib= and
+=journal-abbreviations-short.bib=.
+
+** Hacking
+
+If you have a Ruby installation, you might want to check out the
+=Rakefile= in this project as well as the code in the =lib= dir.  It's
+should be straightforward to add additional sources of journal
+abbreviations and modify their processing as you need it.
+
+Try running
+
+#+BEGIN_SRC shell
+$ rake long
+#+END_SRC
+
+to get parsed, uniq'd, long journal abbreviations in a BibTeX format.
+Substitute =short= for =long= to generate short abbreviations.
